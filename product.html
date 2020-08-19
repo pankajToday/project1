@@ -2011,15 +2011,15 @@
 
 
 
-    /*    $("#inquiryFrm").submit(function(e) {
+       $("#inquiryFrm").submit(function(e) {
             e.preventDefault();
             var $form = $(this);
-            /!*$.post($form.attr("action"), $form.serialize()).then(function() {
+            $.post($form.attr("action"), $form.serialize()).then(function() {
+                alert("Thank you! your request send successfully.");
+            });
 
-            });*!/
-            alert("Thank you! your request send successfully.");
             $("#inquiryForm").modal('hide');
-        });*/
+        });
 
         $("#cancelBtn").on("click",function(){
             $("#inquiryForm").modal('hide');
