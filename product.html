@@ -2011,9 +2011,10 @@
             var $form = $(this);
             $.post($form.attr("action"), $form.serialize()).then(function() {
                 alert("Thank you! your request send successfully.");
+                $("#inquiryForm").modal('hide');
             });
 
-            $("#inquiryForm").modal('hide');
+
         });
 
         $("#cancelBtn").on("click",function(){
