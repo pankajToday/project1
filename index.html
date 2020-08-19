@@ -1691,7 +1691,7 @@
 				<div class="modal-body text-center p-5 mx-auto mw-100" style="font-family: sans-serif !important; ">
 					<h3><strong> Inquiry Form </strong></h3> <br>
 
-					<form role="form"  id="inquiryFrm" name="contact" method="POST"   data-netlify="true">
+					<form  id="inquiryFrm" method="POST" name="inquiryFrm"  data-netlify="true" >
 						<div class="form-group">
 							<div class="row">
 								<div class="col-sm-5">
@@ -1740,8 +1740,13 @@
 							</div>
 						</div>
 
+						<div class="form-group">
+							<div data-netlify-recaptcha="true"></div>
+						</div>
+
 						<div class="login newsletter">
-							<button type="submit" class="btn btn-danger submit mb-4" id="sendInquiryBtn">Submit</button>
+							<button  type="submit" class="btn btn-danger submit mb-4" id="sendInquiryBtn"
+							>Submit</button>
 							<button type="button" class="btn btn-primary submit mb-4" id="cancelBtn">Cancel</button>
 						</div>
 					</form>
@@ -1776,10 +1781,14 @@
 		e.preventDefault();
 		var $form = $(this);
 
-        alert("Thank you! your request send successfully.");
-		/*$.post($form.attr("action"), $form.serialize()).then(function() {
-
-		});*/
+        $("#inquiryFrm").submit(function(e) {
+            e.preventDefault();
+            var $form = $(this);
+            $.post($form.attr("action"), $form.serialize()).then(function() {
+                alert("Thank you! your request send successfully.");
+                $("#inquiryForm").modal('hide');
+            });
+        });
         $("#inquiryForm").modal('hide');
 	});
 
