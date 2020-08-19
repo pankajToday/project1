@@ -1846,7 +1846,7 @@
 				<div class="modal-body text-center p-5 mx-auto mw-100" style="font-family: sans-serif !important; ">
 					<h3><strong> Inquiry Form </strong></h3> <br>
 
-					<form role="form"  id="inquiryFrm" name="contact" action="post"   data-netlify="true">
+					<form role="form"  id="inquiryFrm" name="inquiryFrm" action="POST"   data-netlify="true">
 						<div class="form-group">
 							<div class="row">
 								<div class="col-sm-5">
@@ -2001,16 +2001,15 @@
 
 
 
-        $("#inquiryFrm").submit(function(e) {
+    /*    $("#inquiryFrm").submit(function(e) {
             e.preventDefault();
             var $form = $(this);
+            /!*$.post($form.attr("action"), $form.serialize()).then(function() {
 
+            });*!/
             alert("Thank you! your request send successfully.");
-            /*$.post($form.attr("action"), $form.serialize()).then(function() {
-
-            });*/
             $("#inquiryForm").modal('hide');
-        });
+        });*/
 
         $("#cancelBtn").on("click",function(){
             $("#inquiryForm").modal('hide');
